@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* index.css */
+
+/* Hide the default slick arrows */
+
+/* index.css */
+
+/* Hide the default slick arrows completely */
+.slick-prev:before, .slick-next:before  {
+    content: '' !important;
+  }
+  
+.custom-next-arrow {
+  @apply absolute top-1/2 -right-2 transform -translate-y-1/2 bg-white rounded-md text-slate-500 p-4  cursor-pointer z-10 flex justify-center items-center !important;
+  width: 40px !important; /* Set width */
+  height: 70px !important; /* Set height */
+  transition: background-color 0.3s ease !important;
+}
+
+/* Custom Prev Arrow */
+.custom-prev-arrow {
+  @apply absolute top-1/2 -left-2 transform -translate-y-1/2 bg-white rounded-md text-slate-500 p-4 cursor-pointer z-10 flex justify-center items-center !important;
+  width: 40px !important; /* Set width */
+  height: 70px !important; /* Set height */
+  transition: background-color 0.3s ease !important;
+}
+
+/* Optional: Add hover effect for arrows */
+.custom-next-arrow:hover,
+.custom-prev-arrow:hover {
+  background-color: #fbfbfb !important; /* A darker gray on hover */
+}
+
+.custom-next-arrow:active,
+.custom-prev-arrow:active {
+  background-color: #f1f0f0 !important; /* Even darker on active click */
+}
+  
+
+@layer components {
+    .item {
+        @apply  font-sans text-lg font-medium cursor-pointer
+    }
+
+}

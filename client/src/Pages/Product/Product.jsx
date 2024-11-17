@@ -3,7 +3,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import BoltIcon from '@mui/icons-material/Bolt';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import Rating from '../../Components/Products/rating';
+import Rating from '../../Components/Products/Rating';
 import { Link } from 'react-router-dom';
 
 function Product() {

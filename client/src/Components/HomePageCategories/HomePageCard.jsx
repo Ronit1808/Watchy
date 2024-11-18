@@ -8,12 +8,12 @@ const HomePageCard = ({ item }) => {
         <img
           src={item.img}
           alt={item.title}
-          className="w-full h-52 object-cover transform transition duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-95"
+          className="w-full h-52 object-cover transform transition duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-95 sm:h-64 md:h-72 lg:h-80" // Adjust height for different screen sizes
         />
         
         {/* Content Section */}
         <div className="p-4 flex flex-col items-center bg-white">
-          <h3 className="text-lg font-semibold">{item.model}</h3>
+          <h3 className="text-sm sm:text-md md:text-lg font-semibold text-center">{item.model}</h3>
           <p className="text-md text-green-600">{item.price}</p>
         </div>
       </div>
@@ -21,4 +21,4 @@ const HomePageCard = ({ item }) => {
   );
 };
 
-export default HomePageCard;
+export default HomePageCard

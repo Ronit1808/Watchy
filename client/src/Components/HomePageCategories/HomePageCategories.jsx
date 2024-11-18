@@ -65,7 +65,7 @@ const settings = {
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
@@ -128,10 +128,9 @@ const data = [
   }
 ];
 
-
 const HomePageCategories = ({ name }) => {
   return (
-    <div className="HomePageCategories flex flex-col px-2 pb-4 mx-4 my-4 shadow-md bg-white relative">
+    <div className="HomePageCategories flex flex-col px-4 pb-6 mx-4 my-6 shadow-md bg-white relative">
       <div className="component_heading p-4">
         <p className="text-3xl font-semibold text-gray-800">{name}</p>
       </div>
@@ -148,5 +147,6 @@ const HomePageCategories = ({ name }) => {
     </div>
   );
 };
+
 
 export default HomePageCategories;

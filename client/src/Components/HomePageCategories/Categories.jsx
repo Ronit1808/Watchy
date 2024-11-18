@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Categories = () => {
   return (
-    <div className="Categories flex flex-wrap justify-evenly gap-4 sm:gap-8 md:gap-12 mx-4 sm:mx-4 py-4 bg-gray-900">
+    <div className="Categories flex flex-wrap justify-evenly  p-4 gap-4 sm:gap-8 md:gap-12 mx-4 sm:mx-4 py-6 bg-white">
       {/* Men Category */}
       <Link to="/products/1">
         <div className="category-section flex flex-col gap-4 h-96 w-full sm:w-80 md:w-80 mb-2">
-          <div className="category-section-heading text-center text-slate-200 font-semibold text-xl sm:text-2xl">
+          <div className="category-section-heading text-center font-semibold text-xl sm:text-2xl">
             Men
           </div>
           <div className="category-section-image w-full h-64 sm:h-80 md:h-96 overflow-hidden relative">
@@ -23,7 +23,7 @@ const Categories = () => {
       {/* Women Category */}
       <Link to="/products/2">
         <div className="category-section flex flex-col gap-4 h-96 w-full sm:w-80 md:w-80 mb-2">
-          <div className="category-section-heading text-center text-slate-200 font-semibold text-xl sm:text-2xl">
+          <div className="category-section-heading text-center font-semibold text-xl sm:text-2xl">
             Women
           </div>
           <div className="category-section-image w-full h-64 sm:h-80 md:h-96 overflow-hidden relative">
@@ -39,7 +39,7 @@ const Categories = () => {
       {/* Kids Category */}
       <Link to="/products/3">
         <div className="category-section flex flex-col gap-4 h-96 w-full sm:w-80 md:w-80 mb-2">
-          <div className="category-section-heading text-center text-slate-200 font-semibold text-xl sm:text-2xl">
+          <div className="category-section-heading text-center font-semibold text-xl sm:text-2xl">
             Kids
           </div>
           <div className="category-section-image w-full h-64 sm:h-80 md:h-96 overflow-hidden relative">

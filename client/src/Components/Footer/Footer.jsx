@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="left text-sm sm:text-lg">
             Get connected with us on social networks
           </div>
-          <div className="right flex gap-4 text-xl sm:text-2xl md:text-3xl">
+          <div className="right flex gap-4 text-base sm:text-xl md:text-2xl">
             <FacebookIcon className="cursor-pointer hover:opacity-80" />
             <XIcon className="cursor-pointer hover:opacity-80" />
             <GoogleIcon className="cursor-pointer hover:opacity-80" />

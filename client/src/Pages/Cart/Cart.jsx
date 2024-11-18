@@ -67,7 +67,7 @@ function Cart() {
   const finalAmount = calculateTotal() - discountAmount + deliveryCharges;
 
   return (
-    <div className="cart-container flex flex-col lg:flex-row m-8 p-4 bg-white gap-8">
+    <div className="cart-container flex flex-col lg:flex-row m-4 lg:m-8 p-4 bg-white gap-8">
       <div className="cart-items-container flex-1">
         <div className="cart-header mb-6 text-xl font-semibold flex items-center justify-between">
           <h2>Your Cart</h2>
@@ -76,7 +76,7 @@ function Cart() {
 
         <div className="cart-items space-y-6">
           {cartItems.map((item) => (
-            <div key={item.id} className="cart-item flex items-center justify-between bg-white shadow-lg rounded-lg p-6 mb-4 hover:shadow-xl transition-all duration-300">
+            <div key={item.id} className="cart-item flex flex-col justify-start sm:flex-row sm:items-center sm:justify-between bg-white shadow-lg rounded-lg p-6 mb-4 hover:shadow-xl transition-all duration-300">
               <div className="flex items-center gap-6">
                 <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-md" />
                 <div className="flex flex-col">
@@ -88,7 +88,7 @@ function Cart() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-4 sm:mt-0">
                 <button
                   onClick={() => decreaseQuantity(item.id)}
                   className="px-3 py-1 bg-gray-200 rounded-md hover:bg-gray-300 text-xl"
@@ -144,7 +144,7 @@ function Cart() {
         </div>
 
         <div className="flex flex-col gap-4 mt-6">
-          <button className="py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-all duration-300">
+          <button className="py-2 bg-green-600  text-white rounded-md hover:bg-green-700 transition-all duration-300">
             Proceed to Checkout
           </button>
           <button

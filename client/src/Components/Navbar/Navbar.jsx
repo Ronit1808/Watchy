@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-gray-900 text-stone-200 sticky top-0 z-20">
-      <div className="wrapper p-5 flex justify-between items-center">
+      <div className="wrapper p-3 sm:p-4 md:p-5 flex justify-between items-center">
         {/* Left Section: Logo */}
         <div className="left flex justify-between items-center w-full md:w-auto gap-5">
           <div className="item logo pl-3 flex cursor-pointer">
@@ -34,23 +34,23 @@ const Navbar = () => {
 
           {/* Search Icon */}
           <div className="item">
-            <span className="material-symbols-outlined text-2xl">search</span>
+            <span className="material-symbols-outlined text-xl">search</span>
           </div>
 
           {/* Profile Icon */}
           <div className="item">
-            <span className="material-symbols-outlined text-2xl">person</span>
+            <span className="material-symbols-outlined text-xl">person</span>
           </div>
 
           {/* Favorite Icon */}
           <div className="item">
-            <span className="material-symbols-outlined text-2xl">favorite</span>
+            <span className="material-symbols-outlined text-xl">favorite</span>
           </div>
 
           {/* Cart Icon with Badge */}
           <Link to="/product/cart">
             <div className="item relative">
-              <span className="material-symbols-outlined text-2xl">shopping_cart</span>
+              <span className="material-symbols-outlined text-xl">shopping_cart</span>
               <span className="bg-blue-400 text-white text-xs flex justify-center items-center absolute left-3.5 top-0 rounded-lg w-4 h-4">
                 0
               </span>

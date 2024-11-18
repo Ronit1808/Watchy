@@ -8,7 +8,7 @@ const HomePageCard = ({ item }) => {
         <img
           src={item.img}
           alt={item.title}
-          className="w-full h-52 object-cover transform transition duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-95 sm:h-64 md:h-72 lg:h-80" // Adjust height for different screen sizes
+          className="w-full h-52 object-cover transform transition duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-95 sm:h-64 md:h-72 lg:h-80"
         />
         
         {/* Content Section */}

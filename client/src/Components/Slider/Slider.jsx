@@ -1,40 +1,69 @@
-import React , {useState} from 'react'
-import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
-import AdjustIcon from '@mui/icons-material/Adjust';
+import React, { useState } from 'react';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import Brightness1Icon from '@mui/icons-material/Brightness1';
+import { Circle } from 'lucide-react';
 
-const Slider = ({Images}) => {
-  const [imageIndex , setImageIndex] = useState(0)
+const Slider = ({ Images }) => {
+  const [imageIndex, setImageIndex] = useState(0);
+
   const imgStyle = {
-    translate: `${-100 * imageIndex}%`,
-    transition : 'translate 300ms ease-in-out',
-  }
-  
+    transform: `translateX(-${100 * imageIndex}%)`,
+    transition: 'transform 300ms ease-in-out',
+  };
+
   return (
-    <div className='imageSlider w-full h-full relative'>
-      <div  className='w-full h-full flex overflow-hidden'>
-        {Images.map(url => (
-            <img className='image w-full h-full object-cover block grow-0 shrink-0 '  key={url} src = {url} style={imgStyle}  />
-          ))}
+    <div className="imageSlider w-full h-full relative">
+      <div className="w-full h-full flex overflow-hidden">
+        {Images.map((url, index) => (
+          <img
+            className="image w-full h-full object-cover block grow-0 shrink-0"
+            key={index}
+            src={url}
+            style={imgStyle}
+          />
+        ))}
       </div>
-      <button  className='left absolute px-4 top-0 left-0 bottom-0 cursor-default text-white '> 
-       <ArrowBackIosIcon fontSize='large' onClick={() => setImageIndex(index => index === 0 ? Images.length - 1 : index - 1)} className="material-symbols-outlined hover:opacity-50 cursor-pointer"/>
+
+      {/* Left Arrow */}
+      <button
+        className="left absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer text-white z-10 text-lg sm:text-xl md:text-2xl"
+        onClick={() =>
+          setImageIndex((index) => (index === 0 ? Images.length - 1 : index - 1))
+        }
+      >
+        <ArrowBackIosIcon fontSize="inherit" />
       </button>
-      <button  className='right absolute px-4 top-0 bottom-0 right-0 cursor-default  text-white'>
-        <ArrowForwardIosIcon  fontSize='large' onClick={() => setImageIndex(index => index === Images.length - 1 ?  0 : index + 1)} className="material-symbols-outlined text-5xl hover:opacity-50 cursor-pointer"/>
+
+      {/* Right Arrow */}
+      <button
+        className="right absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer text-white z-10 text-lg sm:text-xl md:text-2xl"
+        onClick={() =>
+          setImageIndex((index) => (index === Images.length - 1 ? 0 : index + 1))
+        }
+      >
+        <ArrowForwardIosIcon fontSize="inherit" />
       </button>
-      <div className='imgSlider-selected absolute flex gap-2 bottom-6 left-1/2 -translate-x-1/2 stroke-white fill-black'>
-        {Images.map(( _, index) => (
-          <button onClick={() => setImageIndex(index)}>
-                  {index === imageIndex ? <Brightness1Icon className='text-white opacity-80 text-xs'/> : <CircleOutlinedIcon className='text-white text-xs'/>}
+
+      {/* Dots */}
+      <div className="imgSlider-selected absolute flex gap-2 bottom-6 left-1/2 -translate-x-1/2 stroke-white fill-black z-10">
+        {Images.map((_, index) => (
+          <button
+            onClick={() => setImageIndex(index)}
+            key={index}
+            className="dot-button"
+          >
+            {index === imageIndex ? (
+              <Circle className="text-white fill-white opacity-80 text-[5px] sm:text-sm md:text-base" />
+            ) : (
+              <Circle className="text-white stroke-1 text-[5px] sm:text-sm md:text-base" />
+            )}
           </button>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;

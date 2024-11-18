@@ -42,7 +42,7 @@
 
 @layer components {
     .item {
-        @apply  font-sans text-lg font-medium cursor-pointer
+        @apply  font-sans text-base font-normal cursor-pointer
     }
 
 }

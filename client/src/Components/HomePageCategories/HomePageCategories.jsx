@@ -131,7 +131,7 @@ const data = [
 
 const HomePageCategories = ({ name }) => {
   return (
-    <div className="HomePageCategories flex flex-col px-2 pb-4 mx-8 my-8 shadow-md bg-white relative">
+    <div className="HomePageCategories flex flex-col px-2 pb-4 mx-4 my-4 shadow-md bg-white relative">
       <div className="component_heading p-4">
         <p className="text-3xl font-semibold text-gray-800">{name}</p>
       </div>

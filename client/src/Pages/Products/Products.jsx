@@ -6,6 +6,7 @@ import cardimg3 from '../../Images/cardimg3.jpg';
 import cardimg4 from '../../Images/cardimg4.jpg';
 import cardimg5 from '../../Images/cardimg5.jpg';
 import cardimg6 from '../../Images/cardimg6.jpg';
+import { ChevronDown } from 'lucide-react';
 
 function Products() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,8 +30,8 @@ function Products() {
       brand: "Patek Philippe",
       model: "Nautilus 5711",
       img: cardimg2,
-      price: "₹22,000,000",
-      discountPrice: "₹20,500,000",
+      price: "₹22,000,00",
+      discountPrice: "₹20,500,00",
       type: "Trending"
     },
     {
@@ -72,8 +73,9 @@ function Products() {
   ];
 
   return (
-    <div className="products flex mx-4 my-4">
-      <div className="left basis-1/5 p-4 bg-white">
+    <div className="products flex flex-col lg:flex-row mx-2 my-4">
+      {/* Sidebar (Filters) */}
+      <div className="left lg:basis-1/5 p-4 bg-white lg:mr-4 mb-4 lg:mb-0">
         <h2 className="text-2xl font-semibold">Filters</h2>
 
         {/* Gender Filter */}
@@ -81,15 +83,15 @@ function Products() {
           <h3 className="filterheading font-semibold">Gender</h3>
           <div className="inputitem">
             <input type="checkbox" id="1" value={1} />
-            <label htmlFor="1">Men</label>
+            <label className="pl-2" htmlFor="1">Men</label>
           </div>
           <div className="inputitem">
             <input type="checkbox" id="2" value={2} />
-            <label htmlFor="2">Women</label>
+            <label className="pl-2" htmlFor="2">Women</label>
           </div>
           <div className="inputitem">
             <input type="checkbox" id="3" value={3} />
-            <label htmlFor="3">Kids</label>
+            <label className="pl-2" htmlFor="3">Kids</label>
           </div>
         </div>
 
@@ -107,16 +109,19 @@ function Products() {
         <div className="filteritem my-4">
           <button
             onClick={toggleDropdown}
-            className="font-semibold rounded-md focus:outline-none"
+            className="font-semibold rounded-md focus:outline-none flex items-center"
           >
             Brand
+            <span className={`ml-24 ${isOpen ? 'rotate-180' : '' }`}>
+              <ChevronDown />
+            </span>
           </button>
           {isOpen && (
-            <div className="mt-2 w-full bg-white shadow-lg rounded-md border border-gray-200">
+            <div className="mt-2 w-full bg-white rounded-md">
               <ul className="py-2">
                 <li className="px-4 py-2 hover:bg-gray-100">Rolex</li>
-                <li className="px-4 py-2 hover:bg-gray-100">Omega </li>
-                <li className="px-4 py-2 hover:bg-gray-100"> Titan </li>
+                <li className="px-4 py-2 hover:bg-gray-100">Omega</li>
+                <li className="px-4 py-2 hover:bg-gray-100">Titan</li>
               </ul>
             </div>
           )}
@@ -141,10 +146,11 @@ function Products() {
         </div>
       </div>
 
-      <div className="right basis-4/5 ml-4 bg-white">
-        <div className="productscard-container flex flex-wrap justify-between gap-4 mx-4 my-4">
+      {/* Products List (Cards) */}
+      <div className="right lg:basis-4/5 bg-white">
+        <div className="productscard-container flex flex-wrap justify-between gap-2 sm:justify-between sm:gap-6 sm:mx-2 my-4">
           {watches.map((watch) => (
-            <div key={watch.id} className="card-wrapper w-1/4 h-96">
+            <div key={watch.id} className="card-wrapper w-[48%] sm:w-[32%] md:w-[30%] lg:w-[28%] ">
               <ProductsCard watch={watch} />
             </div>
           ))}

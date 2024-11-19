@@ -12,11 +12,11 @@ const Footer = () => {
       <div className="wrapper flex flex-col">
         
         {/* Social Section */}
-        <div className="socials flex justify-between px-4 sm:px-10 md:px-24 py-6 bg-indigo-900 text-white">
-          <div className="left text-sm sm:text-lg">
+        <div className="socials flex justify-between px-4 sm:px-8 md:px-14 py-6 bg-indigo-900 text-white">
+          <div className="left text-xs sm:text-lg">
             Get connected with us on social networks
           </div>
-          <div className="right flex gap-4 text-base sm:text-xl md:text-2xl">
+          <div className="right flex gap-2 sm:gap-4">
             <FacebookIcon className="cursor-pointer hover:opacity-80" />
             <XIcon className="cursor-pointer hover:opacity-80" />
             <GoogleIcon className="cursor-pointer hover:opacity-80" />
@@ -27,13 +27,13 @@ const Footer = () => {
         </div>
 
         {/* Main Footer Sections */}
-        <div className="top flex flex-col md:flex-row sm:px-12 md:px-24 px-6 py-6 gap-10 bg-gray-800 text-stone-200">
+        <div className="top flex flex-col md:flex-row sm:px-8 md:px-14 px-6 py-6 gap-10 bg-gray-800 text-stone-200">
           
           {/* About Section */}
           <div className="item2 flex flex-col flex-1 p-4">
             <div className="section-heading font-bold mb-4">ABOUT</div>
-            <p className="text-justify text-sm sm:text-base md:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil suscipit libero alias enim? Natus, quos iusto fuga nostrum nesciunt provident, obcaecati tempora reprehenderit dolore eius doloremque omnis minima, asperiores modi?
+            <p className="text-wrap text-xs sm:text-sm md:text-base">
+            Welcome to Watchy, where luxury, precision, and style meet. We are passionate about offering an exclusive selection of the finest watches from the world's most renowned brands. Whether you're a seasoned collector or a first-time buyer, we cater to all watch enthusiasts, offering everything from timeless classics to the latest trending pieces.
             </p>
           </div>
           
@@ -41,10 +41,10 @@ const Footer = () => {
           <div className="item2 flex-1 p-4">
             <div className="section-heading font-bold mb-4">CATEGORIES</div>
             <ul>
-              <li className="mb-2 text-sm sm:text-base md:text-lg">Men</li>
-              <li className="mb-2 text-sm sm:text-base md:text-lg">Women</li>
-              <li className="mb-2 text-sm sm:text-base md:text-lg">Kids</li>
-              <li className="mb-2 text-sm sm:text-base md:text-lg">Accessories</li>
+              <li className="mb-2 text-xs sm:text-sm md:text-base">Men</li>
+              <li className="mb-2 text-xs sm:text-sm md:text-base">Women</li>
+              <li className="mb-2 text-xs sm:text-sm md:text-base">Kids</li>
+              <li className="mb-2 text-xs sm:text-sm md:text-base">Accessories</li>
             </ul>
           </div>
           
@@ -52,30 +52,30 @@ const Footer = () => {
           <div className="item2 flex-1 p-4">
             <div className="section-heading font-bold mb-4">LINKS</div>
             <ul>
-              <li className="mb-2 text-sm sm:text-base md:text-lg">FAQ</li>
-              <li className="mb-2 text-sm sm:text-base md:text-lg">Help</li>
-              <li className="mb-2 text-sm sm:text-base md:text-lg">Stores</li>
-              <li className="mb-2 text-sm sm:text-base md:text-lg">Guidelines</li>
+              <li className="mb-2 text-xs sm:text-sm md:text-base">FAQ</li>
+              <li className="mb-2 text-xs sm:text-sm md:text-base">Help</li>
+              <li className="mb-2 text-xs sm:text-sm md:text-base">Stores</li>
+              <li className="mb-2 text-xs sm:text-sm md:text-base">Guidelines</li>
             </ul>
           </div>
 
           {/* Contact Section */}
           <div className="item2 flex-1 p-4">
-            <div className="section-heading font-bold mb-4">CONTACT</div>
+            <div className="section-heading font-bold mb-2 sm:mb-4">CONTACT</div>
             <ul>
-              <li className="mb-2 flex justify-start items-center gap-3 text-sm sm:text-base md:text-lg">
+              <li className="mb-2 flex justify-start items-center gap-3 text-xs sm:text-sm ">
                 <span className="material-symbols-outlined">home_pin</span>
                 <span>Faridabad, Haryana 121001, India</span>
               </li>
-              <li className="mb-2 flex justify-start items-center gap-3 text-sm sm:text-base md:text-lg">
+              <li className="mb-2 flex justify-start items-center gap-3 text-xs sm:text-sm ">
                 <span className="material-symbols-outlined">contact_mail</span>
                 <span>Info@gmail.com</span>
               </li>
-              <li className="mb-2 flex justify-start items-center gap-3 text-sm sm:text-base md:text-lg">
+              <li className="mb-2 flex justify-start items-center gap-3 text-xs sm:text-sm ">
                 <span className="material-symbols-outlined">call</span>
                 <span>+91-9999999999</span>
               </li>
-              <li className="mb-2 flex justify-start items-center gap-3 text-sm sm:text-base md:text-lg">
+              <li className="mb-2 flex justify-start items-center gap-3 text-xs sm:text-sm ">
                 <span className="material-symbols-outlined">print</span>
                 <span>+12 345 678 90</span>
               </li>
@@ -85,8 +85,8 @@ const Footer = () => {
 
         {/* Footer Bottom Section */}
           <div className="left flex justify-center items-center gap-3 text-sm sm:text-lg md:text-xl bg-gray-900 py-6 text-stone-200">
-            <span className="logo text-xl font-semibold">WATCHY</span>
-            <span className="copyright font-normal">© Copyright 2024. All Rights Reserved</span>
+            <span className="logo text-base sm:text-lg md:text-xl font-semibold">WATCHY</span>
+            <span className="copyright text-xs sm:text-base md:text-base font-normal">© Copyright 2024. All Rights Reserved</span>
           </div>
         </div>
       </div>

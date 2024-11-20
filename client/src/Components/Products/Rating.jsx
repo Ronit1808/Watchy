@@ -18,7 +18,7 @@ const Rating = ({ reviews }) => {
 
   return (
     <div className="max-w-lg bg-white mt-4">
-      <h3 className="text-xl font-semibold mb-4">Ratings & Reviews</h3>
+      <h3 className="text-base md:text-xl font-semibold mb-4">Ratings & Reviews</h3>
       <div className="flex items-center space-x-2 mb-4">
         <div className="flex items-center">{renderStars(Math.round(averageRating))}</div>
         <span className="text-gray-700">{averageRating.toFixed(1)} / 5</span>

@@ -67,7 +67,7 @@ function Cart() {
   const finalAmount = calculateTotal() - discountAmount + deliveryCharges;
 
   return (
-    <div className="cart-container flex flex-col lg:flex-row m-4 lg:m-8 p-4 bg-white gap-8">
+    <div className="cart-container flex flex-col lg:flex-row p-4 bg-white gap-8">
       <div className="cart-items-container flex-1">
         <div className="cart-header mb-6 text-xl font-semibold flex items-center justify-between">
           <h2>Your Cart</h2>
@@ -143,13 +143,13 @@ function Cart() {
           <span className="text-xl font-semibold">₹{finalAmount.toFixed(2)}</span>
         </div>
 
-        <div className="flex flex-col gap-4 mt-6">
-          <button className="py-2 bg-green-600  text-white rounded-md hover:bg-green-700 transition-all duration-300">
+        <div className="flex flex-col items-center gap-4 mt-6">
+          <button className="py-2 w-full md:w-1/2 lg:w-full bg-green-600  text-white rounded-md hover:bg-green-700 transition-all duration-300">
             Proceed to Checkout
           </button>
           <button
             onClick={() => setCartItems([])} // Clears the cart
-            className="py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-all duration-300"
+            className="py-2 w-full md:w-1/2 lg:w-full bg-red-600 text-white rounded-md hover:bg-red-700 transition-all duration-300"
           >
             Clear Cart
           </button>

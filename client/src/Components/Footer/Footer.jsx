@@ -5,6 +5,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -27,7 +28,7 @@ const Footer = () => {
         </div>
 
         {/* Main Footer Sections */}
-        <div className="top flex flex-col md:flex-row sm:px-8 md:px-14 px-6 py-6 gap-10 bg-gray-800 text-stone-200">
+        <div className="top flex flex-col lg:flex-row sm:px-8 md:px-14 px-6 py-6 gap-10 bg-gray-800 text-stone-200">
           
           {/* About Section */}
           <div className="item2 flex flex-col flex-1 p-4">
@@ -41,10 +42,18 @@ const Footer = () => {
           <div className="item2 flex-1 p-4">
             <div className="section-heading font-bold mb-4">CATEGORIES</div>
             <ul>
-              <li className="mb-2 text-xs sm:text-sm md:text-base">Men</li>
-              <li className="mb-2 text-xs sm:text-sm md:text-base">Women</li>
-              <li className="mb-2 text-xs sm:text-sm md:text-base">Kids</li>
-              <li className="mb-2 text-xs sm:text-sm md:text-base">Accessories</li>
+              <Link to='/products/1'>
+                <li className="mb-2 text-xs sm:text-sm md:text-base hover:cursor-pointer hover:text-teal-400">Men</li>
+              </Link>
+              <Link to='/products/2'>
+              <li className="mb-2 text-xs sm:text-sm md:text-base hover:cursor-pointer hover:text-teal-400">Women</li>
+              </Link>
+              <Link to='/products/3'>
+              <li className="mb-2 text-xs sm:text-sm md:text-base hover:cursor-pointer hover:text-teal-400">Kids</li>
+              </Link>
+              <Link to='/products/4'>
+              <li className="mb-2 text-xs sm:text-sm md:text-base hover:cursor-pointer hover:text-teal-400">Accessories</li>
+              </Link>
             </ul>
           </div>
           

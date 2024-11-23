@@ -10,9 +10,9 @@ const Navbar = () => {
       <div className="wrapper p-3 sm:p-4 md:p-5 flex justify-between items-center">
         {/* Left Section: Logo */}
         <div className="left flex justify-between items-center w-full lg:w-auto gap-5">
-          <div className="item logo pl-3 flex cursor-pointer">
-            <span className="material-symbols-outlined text-3xl">watch</span>
-            <p className="text-2xl font-bold">WATCHY</p>
+          <div className="item logo pl-1 md:pl-3 flex cursor-pointer">
+            <span className="material-symbols-outlined text-2xl md:text-3xl">watch</span>
+            <p className="text-xl md:text-2xl font-bold">WATCHY</p>
           </div>
 
           {/* Mobile Menu Toggle (Hamburger Icon) */}

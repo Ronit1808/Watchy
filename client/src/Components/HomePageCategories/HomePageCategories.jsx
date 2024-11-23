@@ -20,7 +20,7 @@ const CustomNextArrow = ({ className, onClick }) => (
     className={`custom-next-arrow ${className}`} // Tailwind + Custom class
     onClick={onClick}
   >
-    <span className="text-2xl"><ArrowForwardIosIcon/></span> {/* Right arrow */}
+    <span className="text-xl md:text-2xl"><ArrowForwardIosIcon/></span> {/* Right arrow */}
   </div>
 );
 
@@ -30,7 +30,7 @@ const CustomPrevArrow = ({ className, onClick }) => (
     className={`custom-prev-arrow ${className}`} // Tailwind + Custom class
     onClick={onClick}
   >
-    <span className="text-2xl"><ArrowBackIosNewIcon/></span> {/* Left arrow */}
+    <span className="text-xl md:text-2xl"><ArrowBackIosNewIcon/></span> {/* Left arrow */}
   </div>
 );
 
@@ -60,6 +60,7 @@ const settings = {
         slidesToShow: 2,
         slidesToScroll: 2,
         initialSlide: 2,
+        autoplay: false,
       },
     },
     {
@@ -67,6 +68,7 @@ const settings = {
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
+        autoplay: false,
       },
     },
   ],
@@ -130,7 +132,7 @@ const data = [
 
 const HomePageCategories = ({ name }) => {
   return (
-    <div className="HomePageCategories flex flex-col px-4 pb-6 lg:mx-4 my-2 md:my-4 shadow-md bg-white relative">
+    <div className="HomePageCategories flex flex-col px-4 pt-2 pb-6 lg:mx-4 mb-2 md:mb-4 shadow-md bg-white relative">
       <div className="component_heading p-2 lg:p-4">
         <p className="text-center text-xl md:text-3xl font-semibold text-gray-800">{name}</p>
       </div>

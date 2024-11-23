@@ -53,7 +53,7 @@ function Product() {
   ];
 
   return (
-    <div className="product flex flex-col md:flex-row md:mx-4 mb-2 h-max bg-white">
+    <div className="product flex flex-col md:flex-row mb-2 h-max bg-white">
       <div className="left flex p-2 gap-4 h-fit  flex-col-reverse xl:flex-row flex-1">
         <div className="images basis-full lg:basis-1/5 flex gap-4 overflow-x-auto xl:flex-col">
           <img

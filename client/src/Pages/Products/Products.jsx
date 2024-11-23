@@ -73,7 +73,7 @@ function Products() {
   ];
 
   return (
-    <div className="products flex flex-col lg:flex-row mx-2 my-4">
+    <div className="products flex flex-col lg:flex-row lg:mx-4 lg:my-4">
       {/* Sidebar (Filters) */}
       <div className="left lg:basis-1/5 p-4 bg-white lg:mr-4 mb-4 lg:mb-0">
         <h2 className="text-2xl font-semibold">Filters</h2>

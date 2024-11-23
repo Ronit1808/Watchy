@@ -130,9 +130,9 @@ const data = [
 
 const HomePageCategories = ({ name }) => {
   return (
-    <div className="HomePageCategories flex flex-col px-4 pb-6 mx-4 my-6 shadow-md bg-white relative">
-      <div className="component_heading p-4">
-        <p className="text-3xl font-semibold text-gray-800">{name}</p>
+    <div className="HomePageCategories flex flex-col px-4 pb-6 lg:mx-4 my-2 md:my-4 shadow-md bg-white relative">
+      <div className="component_heading p-2 lg:p-4">
+        <p className="text-center text-xl md:text-3xl font-semibold text-gray-800">{name}</p>
       </div>
 
       <div className="w-full relative">

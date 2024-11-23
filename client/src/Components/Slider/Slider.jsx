@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
-import Brightness1Icon from '@mui/icons-material/Brightness1';
 import { Circle } from 'lucide-react';
 
 const Slider = ({ Images }) => {
@@ -47,7 +45,7 @@ const Slider = ({ Images }) => {
       </button>
 
       {/* Dots */}
-      <div className="imgSlider-selected absolute flex gap-2 bottom-6 left-1/2 -translate-x-1/2 stroke-white fill-black z-10">
+      <div className="imgSlider-selected hidden absolute lg:flex gap-2 bottom-6 left-1/2 -translate-x-1/2 stroke-white fill-black z-10">
         {Images.map((_, index) => (
           <button
             onClick={() => setImageIndex(index)}

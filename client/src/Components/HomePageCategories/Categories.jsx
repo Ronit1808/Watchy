@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Categories = () => {
   return (
-    <div className="Categories flex flex-wrap justify-evenly  p-4 gap-4 sm:gap-8 md:gap-12 mx-4 sm:mx-4 py-6 bg-white">
+    <div className="Categories flex flex-wrap justify-evenly  p-4 gap-2 sm:gap-4 md:gap-12 lg:mx-4 py-2 bg-white">
       {/* Men Category */}
       <Link to="/products/1">
         <div className="category-section flex flex-col gap-4 h-96 w-full sm:w-80 md:w-80 mb-2">

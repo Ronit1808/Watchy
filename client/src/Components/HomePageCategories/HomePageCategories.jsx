@@ -17,20 +17,20 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 // Custom Next Arrow component
 const CustomNextArrow = ({ className, onClick }) => (
   <div
-    className={`custom-next-arrow ${className}`} // Tailwind + Custom class
+    className={`custom-next-arrow ${className}`} 
     onClick={onClick}
   >
-    <span className="text-xl md:text-2xl"><ArrowForwardIosIcon/></span> {/* Right arrow */}
+    <span className="text-xl md:text-2xl"><ArrowForwardIosIcon/></span> 
   </div>
 );
 
 // Custom Prev Arrow component
 const CustomPrevArrow = ({ className, onClick }) => (
   <div
-    className={`custom-prev-arrow ${className}`} // Tailwind + Custom class
+    className={`custom-prev-arrow ${className}`} 
     onClick={onClick}
   >
-    <span className="text-xl md:text-2xl"><ArrowBackIosNewIcon/></span> {/* Left arrow */}
+    <span className="text-xl md:text-2xl"><ArrowBackIosNewIcon/></span> 
   </div>
 );
 
@@ -132,12 +132,19 @@ const data = [
 
 const HomePageCategories = ({ name }) => {
   return (
-    <div className="HomePageCategories flex flex-col px-4 pt-2 pb-6 lg:mx-4 mb-2 md:mb-4 shadow-md bg-white relative">
-      <div className="component_heading p-2 lg:p-4">
-        <p className="text-center text-xl md:text-3xl font-semibold text-gray-800">{name}</p>
+    <div className="HomePageCategories px-4 my-3 py-6 bg-teal-100 shadow-lg rounded-lg">
+      {/* Component Heading */}
+      <div className="component_heading mb-6 text-center">
+        <p className="text-2xl md:text-3xl font-extrabold text-gray-800 tracking-wide">
+          {name}
+        </p>
+        <p className="text-sm md:text-base text-gray-600 mt-1">
+          Explore our curated selection of the finest watches
+        </p>
       </div>
 
-      <div className="w-full relative">
+      {/* Slider */}
+      <div className="relative">
         <Slider {...settings}>
           {data.map((item) => (
             <div key={item.id} className="p-2">
@@ -149,6 +156,5 @@ const HomePageCategories = ({ name }) => {
     </div>
   );
 };
-
 
 export default HomePageCategories;

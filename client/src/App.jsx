@@ -17,7 +17,7 @@ import Footer from './Components/Footer/Footer.jsx'
 
 const Layout = () => {
   return (
-    <div className='app flex flex-col min-h-screen bg-gray-300'>
+    <div className='app flex flex-col min-h-screen bg-white'>
       <Navbar/>
       <Outlet/>
       <Footer/>

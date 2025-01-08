@@ -2,65 +2,66 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  // State to handle mobile menu toggle
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="navbar bg-gray-900 text-stone-200 sticky top-0 z-20">
-      <div className="wrapper p-3 sm:p-4 md:p-5 flex justify-between items-center">
+    <div className="navbar bg-gray-900 text-white sticky top-0 z-20 shadow-lg">
+      <div className="wrapper px-4 py-5 sm:px-8 flex justify-between items-center">
         {/* Left Section: Logo */}
-        <div className="left flex justify-between items-center w-full lg:w-auto gap-5">
-          <div className="item logo pl-1 md:pl-3 flex cursor-pointer">
-            <span className="material-symbols-outlined text-2xl md:text-3xl">watch</span>
-            <p className="text-xl md:text-2xl font-bold">WATCHY</p>
-          </div>
-
-          {/* Mobile Menu Toggle (Hamburger Icon) */}
-          <div className="lg:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
-              <span className="material-symbols-outlined">menu</span>
-            </button>
-          </div>
+        <div className="logo flex items-center cursor-pointer">
+          <span className="material-symbols-outlined text-3xl text-teal-400">watch</span>
+          <p className="text-2xl font-bold ml-2 text-teal-400">WATCHY</p>
         </div>
 
-        {/* Right Section: Links and Icons - Desktop */}
-        <div className="right pr-2 justify-center items-center gap-5 hidden lg:flex">
-          <div className="item mb-1 hover:text-teal-400">
-            <Link to="/">Home</Link>
+        {/* Right Section: Links and Icons */}
+        <div className="hidden lg:flex items-center gap-8">
+          <div className="nav-links flex items-center gap-6 text-base ">
+            <Link to="/" className="hover:text-teal-400 transition">Home</Link>
+            <Link to="/men" className="hover:text-teal-400 transition">Men</Link>
+            <Link to="/women" className="hover:text-teal-400 transition">Women</Link>
+            <Link to="/kids" className="hover:text-teal-400 transition">Kids</Link>
           </div>
-          <div className="item mb-1 hover:text-teal-400">About</div>
-          <div className="item mb-1 hover:text-teal-400">Contact</div>
-          <div className="item mb-1 hover:text-teal-400">Stores</div>
 
-          {/* Search Icon */}
-          <div className="item">
-            <span className="material-symbols-outlined text-xl">search</span>
+          {/* Search Bar */}
+          <div className="search-bar relative flex items-center">
+            <input
+              type="text"
+              placeholder="Search products..."
+              className="bg-gray-800 text-white px-4 py-2 rounded-full focus:ring-2 focus:ring-teal-400 focus:outline-none w-64"
+            />
+            <button className="absolute right-2 text-teal-400">
+              <span className="material-symbols-outlined text-2xl">search</span>
+            </button>
           </div>
 
           {/* Cart Icon with Badge */}
-          <Link to="/product/cart">
-            <div className="item relative">
-              <span className="material-symbols-outlined text-xl">shopping_cart</span>
-              <span className="bg-blue-400 text-white text-xs flex justify-center items-center absolute left-3.5 top-0 rounded-lg w-4 h-4">
-                0
-              </span>
-            </div>
+          <Link to="/product/cart" className="relative">
+            <span className="material-symbols-outlined text-3xl">shopping_cart</span>
+            <span className="bg-red-500 text-white text-xs absolute -top-1 -right-2 rounded-full w-5 h-5 flex items-center justify-center">
+              0
+            </span>
           </Link>
+        </div>
+
+        {/* Hamburger Icon: Mobile */}
+        <div className="lg:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white focus:outline-none"
+          >
+            <span className="material-symbols-outlined text-3xl">menu</span>
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu (Visible when Menu is Open on Mobile) */}
+      {/* Mobile Menu */}
       <div className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-gray-800 p-4`}>
-        <div className="flex flex-col items-center space-y-4">
-          <div className="item hover:text-teal-400">
-            <Link to="/">Home</Link>
-          </div>
-          <div className="item hover:text-teal-400">About</div>
-          <div className="item hover:text-teal-400">Contact</div>
-          <div className="item hover:text-teal-400">Stores</div>
-          <div className="item hover:text-teal-400">
-            <Link to="/product/cart">Cart</Link>
-          </div>
+        <div className="flex flex-col items-center space-y-4 text-sm font-medium">
+          <Link to="/" className="hover:text-teal-400">Home</Link>
+          <Link to="/men" className="hover:text-teal-400">Men</Link>
+          <Link to="/women" className="hover:text-teal-400">Women</Link>
+          <Link to="/kids" className="hover:text-teal-400">Kids</Link>
+          <Link to="/product/cart" className="hover:text-teal-400">Cart</Link>
         </div>
       </div>
     </div>

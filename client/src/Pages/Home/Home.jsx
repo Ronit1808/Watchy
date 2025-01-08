@@ -7,6 +7,7 @@ import watch3 from '../../Images/watch3.jpg'
 import watch4 from '../../Images/watch4.jpg'
 import watch5 from '../../Images/watch5.jpg'
 import Categories from '../../Components/HomePageCategories/Categories'
+import BrandFeatures from '../../Components/HomePageCategories/BrandFeatures'
 
 
 const images = [watch1 , watch2 , watch3 , watch4 , watch5]
@@ -24,6 +25,7 @@ function Home() {
         <HomePageCategories name='Trending'/>
         <Categories/>
         <HomePageCategories name='Big Sale 50% Off'/>
+        <BrandFeatures/>
       </div>
     </>
   )

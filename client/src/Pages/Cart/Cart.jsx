@@ -3,7 +3,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 function Cart() {
-  // Sample products in the cart
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
@@ -21,7 +20,6 @@ function Cart() {
     },
   ]);
 
-  // Increase quantity of the product in the cart
   const increaseQuantity = (id) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -30,7 +28,6 @@ function Cart() {
     );
   };
 
-  // Decrease quantity of the product in the cart
   const decreaseQuantity = (id) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -41,118 +38,115 @@ function Cart() {
     );
   };
 
-  // Remove item from the cart
   const removeItem = (id) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
-  // Calculate the total cost of items in the cart
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
-  // Calculate number of items in the cart
   const calculateTotalItems = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
-  // Discount and delivery charges
-  const discount = 0.1; // 10% discount
-  const deliveryCharges = 50; // Fixed delivery charge
-
-  // Calculate discount amount
+  const discount = 0.1;
+  const deliveryCharges = 50;
   const discountAmount = calculateTotal() * discount;
-
-  // Calculate final amount
   const finalAmount = calculateTotal() - discountAmount + deliveryCharges;
 
   return (
-    <div className="cart-container flex flex-col lg:flex-row p-4 bg-white gap-8">
-      <div className="cart-items-container flex-1">
-        <div className="cart-header mb-6 text-xl font-semibold flex items-center justify-between">
-          <h2>Your Cart</h2>
-          <ShoppingCartIcon className="text-gray-800" />
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-100 p-4">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-6">
+        {/* Cart Items Section */}
+        <div className="flex-1 bg-white rounded-lg shadow-lg p-4">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-2xl font-bold text-gray-800">Shopping Cart</h2>
+            <ShoppingCartIcon className="text-gray-700 text-3xl" />
+          </div>
 
-        <div className="cart-items space-y-6">
-          {cartItems.map((item) => (
-            <div key={item.id} className="cart-item flex flex-col justify-start sm:flex-row sm:items-center sm:justify-between bg-white shadow-lg rounded-lg p-6 mb-4 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center gap-6">
-                <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-md" />
-                <div className="flex flex-col">
-                  <h3 className="font-semibold text-lg text-gray-800">{item.name}</h3>
-                  <div className="flex items-center gap-2 text-gray-700">
-                    <span className="text-xl font-semibold">₹{item.price}</span>
-                    <span className="text-sm text-gray-500">x {item.quantity}</span>
+          <div className="space-y-4">
+            {cartItems.map((item) => (
+              <div
+                key={item.id}
+                className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-gray-50 rounded-lg shadow-md p-4 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-center gap-4 w-full sm:w-auto">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-24 h-24 rounded-lg object-cover"
+                  />
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
+                    <p className="text-sm text-gray-600">₹{item.price}</p>
                   </div>
                 </div>
+                <div className="flex items-center gap-4 mt-4 sm:mt-0 w-full sm:w-auto justify-between">
+                  <button
+                    onClick={() => decreaseQuantity(item.id)}
+                    className="w-10 h-10 pb-1 bg-gray-200 rounded-full flex items-center justify-center text-2xl font-bold hover:bg-gray-300"
+                  >
+                    -
+                  </button>
+                  <span className="text-lg font-semibold">{item.quantity}</span>
+                  <button
+                    onClick={() => increaseQuantity(item.id)}
+                    className="w-10 h-10 pb-1 bg-gray-200 rounded-full flex items-center justify-center text-2xl font-bold hover:bg-gray-300"
+                  >
+                    +
+                  </button>
+                  <button
+                    onClick={() => removeItem(item.id)}
+                    className="text-red-500 hover:text-red-700"
+                  >
+                    <DeleteIcon />
+                  </button>
+                </div>
               </div>
+            ))}
+          </div>
+        </div>
 
-              <div className="flex items-center gap-4 mt-4 sm:mt-0">
-                <button
-                  onClick={() => decreaseQuantity(item.id)}
-                  className="px-3 py-1 bg-gray-200 rounded-md hover:bg-gray-300 text-xl"
-                >
-                  -
-                </button>
-                <span className="text-lg font-semibold">{item.quantity}</span>
-                <button
-                  onClick={() => increaseQuantity(item.id)}
-                  className="px-3 py-1 bg-gray-200 rounded-md hover:bg-gray-300 text-xl"
-                >
-                  +
-                </button>
-                <button
-                  onClick={() => removeItem(item.id)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  <DeleteIcon />
-                </button>
-              </div>
+        {/* Order Summary Section */}
+        <div className="w-full lg:w-1/3 bg-white rounded-lg shadow-lg p-4">
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Order Summary</h3>
+
+          <div className="space-y-4">
+            <div className="flex justify-between text-gray-700">
+              <span>Total Items</span>
+              <span>{calculateTotalItems()}</span>
             </div>
-          ))}
-        </div>
-      </div>
+            <div className="flex justify-between text-gray-700">
+              <span>Subtotal</span>
+              <span>₹{calculateTotal()}</span>
+            </div>
+            <div className="flex justify-between text-gray-700">
+              <span>Discount (10%)</span>
+              <span className="text-green-500">-₹{discountAmount.toFixed(2)}</span>
+            </div>
+            <div className="flex justify-between text-gray-700">
+              <span>Delivery Charges</span>
+              <span>+₹{deliveryCharges}</span>
+            </div>
+          </div>
 
-      {/* Total Amount Card */}
-      <div className="total-amount-card w-full lg:w-80 bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-6">Order Summary</h3>
+          <div className="flex justify-between mt-6 text-lg font-semibold border-t pt-4 text-gray-800">
+            <span>Total Amount</span>
+            <span>₹{finalAmount.toFixed(2)}</span>
+          </div>
 
-        <div className="flex justify-between mb-4 text-gray-800">
-          <span className="font-semibold text-lg">Total Items</span>
-          <span className="text-xl font-semibold">{calculateTotalItems()}</span>
-        </div>
-
-        <div className="flex justify-between mb-4 text-gray-800">
-          <span className="font-semibold text-lg">Subtotal</span>
-          <span className="text-xl font-semibold">₹{calculateTotal()}</span>
-        </div>
-
-        <div className="flex justify-between mb-4 text-gray-800">
-          <span className="font-semibold text-lg">Discount (10%)</span>
-          <span className="text-xl font-semibold text-green-500">-₹{discountAmount.toFixed(2)}</span>
-        </div>
-
-        <div className="flex justify-between mb-4 text-gray-800">
-          <span className="font-semibold text-lg">Delivery Charges</span>
-          <span className="text-xl font-semibold">+₹{deliveryCharges}</span>
-        </div>
-
-        <div className="flex justify-between mt-6 text-gray-800">
-          <span className="font-semibold text-lg">Total Amount</span>
-          <span className="text-xl font-semibold">₹{finalAmount.toFixed(2)}</span>
-        </div>
-
-        <div className="flex flex-col items-center gap-4 mt-6">
-          <button className="py-2 w-full md:w-1/2 lg:w-full bg-green-600  text-white rounded-md hover:bg-green-700 transition-all duration-300">
-            Proceed to Checkout
-          </button>
-          <button
-            onClick={() => setCartItems([])} // Clears the cart
-            className="py-2 w-full md:w-1/2 lg:w-full bg-red-600 text-white rounded-md hover:bg-red-700 transition-all duration-300"
-          >
-            Clear Cart
-          </button>
+          <div className="flex flex-col gap-4 mt-6">
+            <button className="w-full py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-all">
+              Proceed to Checkout
+            </button>
+            <button
+              onClick={() => setCartItems([])}
+              className="w-full py-3 bg-red-500 text-white rounded-lg shadow hover:bg-red-600 transition-all"
+            >
+              Clear Cart
+            </button>
+          </div>
         </div>
       </div>
     </div>

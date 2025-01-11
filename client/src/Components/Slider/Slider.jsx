@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../../Images/wristwatch-bro.png'; 
+import heroImage from '../../Images/Wristwatch-bro.png'; 
 import { Link } from 'react-router-dom';
 
 const Slider = () => {

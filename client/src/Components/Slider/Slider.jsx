@@ -1,66 +1,45 @@
-import React, { useState } from 'react';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Circle } from 'lucide-react';
+import React from 'react';
+import heroImage from '../../Images/wristwatch-bro.png'; 
+import { Link } from 'react-router-dom';
 
-const Slider = ({ Images }) => {
-  const [imageIndex, setImageIndex] = useState(0);
-
-  const imgStyle = {
-    transform: `translateX(-${100 * imageIndex}%)`,
-    transition: 'transform 300ms ease-in-out',
-  };
-
+const Slider = () => {
   return (
-    <div className="imageSlider w-full h-full relative">
-      <div className="w-full h-full flex overflow-hidden">
-        {Images.map((url, index) => (
+    <section className="bg-gray-100">
+      <div className="container mx-auto px-4 py-12 md:py-0 flex flex-col md:flex-row items-center">
+        {/* Left: Image */}
+        <div className="w-full lg:w-1/2">
           <img
-            className="image w-full h-full object-cover block grow-0 shrink-0"
-            key={index}
-            src={url}
-            style={imgStyle}
+            src={heroImage}
+            alt="Hero Section"
+            className="rounded-lg object-cover w-full h-96 lg:h-full"
           />
-        ))}
+        </div>
+
+        {/* Right: Content */}
+        <div className="w-full lg:w-1/2 flex flex-col items-start lg:items-start md:pl-4 lg:pl-12">
+          <h1 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold font-pacifico text-center text-gray-800 leading-tight">
+            Welcome to <span className= "text-teal-400">Wristly</span>
+          </h1>
+          <p className="mt-4 sm:mt-6 text-base md:text-base lg:text-xl font-serif text-gray-600">
+          Wristly is your ultimate destination for discovering the perfect wristwear. Whether you’re seeking luxury watches, affordable timepieces, or cutting-edge smartwatches, Wristly curates a collection that blends sophistication, functionality, and innovation.
+          </p>
+          <div className="mt-6 flex space-x-4">
+            <Link
+              to="/"
+              className="px-6 py-3 bg-teal-600 text-white text-lg font-medium rounded-lg shadow-md hover:bg-teal-700 transition"
+            >
+              Get Started
+            </Link>
+            <Link
+              to="/"
+              className="px-6 py-3 bg-gray-200 text-gray-800 text-lg font-medium rounded-lg shadow-md hover:bg-gray-300 transition"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
       </div>
-
-      {/* Left Arrow */}
-      <button
-        className="left absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer text-white z-10 text-lg sm:text-xl md:text-2xl"
-        onClick={() =>
-          setImageIndex((index) => (index === 0 ? Images.length - 1 : index - 1))
-        }
-      >
-        <ArrowBackIosIcon fontSize="inherit" />
-      </button>
-
-      {/* Right Arrow */}
-      <button
-        className="right absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer text-white z-10 text-lg sm:text-xl md:text-2xl"
-        onClick={() =>
-          setImageIndex((index) => (index === Images.length - 1 ? 0 : index + 1))
-        }
-      >
-        <ArrowForwardIosIcon fontSize="inherit" />
-      </button>
-
-      {/* Dots */}
-      <div className="imgSlider-selected hidden absolute lg:flex gap-2 bottom-6 left-1/2 -translate-x-1/2 stroke-white fill-black z-10">
-        {Images.map((_, index) => (
-          <button
-            onClick={() => setImageIndex(index)}
-            key={index}
-            className="dot-button"
-          >
-            {index === imageIndex ? (
-              <Circle className="text-white fill-white opacity-80 text-[5px] sm:text-sm md:text-base" />
-            ) : (
-              <Circle className="text-white stroke-1 text-[5px] sm:text-sm md:text-base" />
-            )}
-          </button>
-        ))}
-      </div>
-    </div>
+    </section>
   );
 };
 

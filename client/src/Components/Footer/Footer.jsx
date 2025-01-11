@@ -28,13 +28,13 @@ const Footer = () => {
         </div>
 
         {/* Main Footer Sections */}
-        <div className="top flex flex-col lg:flex-row sm:px-8 md:px-14 px-6 py-6 gap-10 bg-gray-800 text-stone-200">
+        <div className="top flex flex-col lg:flex-row sm:px-8 md:px-14 px-6 py-6 gap-6 bg-gray-800 text-stone-200">
           
           {/* About Section */}
           <div className="item2 flex flex-col flex-1 p-4">
             <div className="section-heading font-bold mb-4">ABOUT</div>
-            <p className="text-wrap text-xs sm:text-sm md:text-base">
-            Welcome to Watchy, where luxury, precision, and style meet. We are passionate about offering an exclusive selection of the finest watches from the world's most renowned brands. Whether you're a seasoned collector or a first-time buyer, we cater to all watch enthusiasts, offering everything from timeless classics to the latest trending pieces.
+            <p className="text-wrap text-sm sm:text-base md:text-base">
+            Welcome to Wristly, where luxury, precision, and style meet. We are passionate about offering an exclusive selection of the finest watches from the world's most renowned brands. Whether you're a seasoned collector or a first-time buyer, we cater to all watch enthusiasts, offering everything from timeless classics to the latest trending pieces.
             </p>
           </div>
           
@@ -43,16 +43,16 @@ const Footer = () => {
             <div className="section-heading font-bold mb-4">CATEGORIES</div>
             <ul>
               <Link to='/products/1'>
-                <li className="mb-2 text-xs sm:text-sm md:text-base hover:cursor-pointer hover:text-teal-400">Men</li>
+                <li className="mb-2 text-sm sm:text-base md:text-lg hover:cursor-pointer hover:text-teal-400">Men</li>
               </Link>
               <Link to='/products/2'>
-              <li className="mb-2 text-xs sm:text-sm md:text-base hover:cursor-pointer hover:text-teal-400">Women</li>
+              <li className="mb-2 text-sm sm:text-base md:text-lg hover:cursor-pointer hover:text-teal-400">Women</li>
               </Link>
               <Link to='/products/3'>
-              <li className="mb-2 text-xs sm:text-sm md:text-base hover:cursor-pointer hover:text-teal-400">Kids</li>
+              <li className="mb-2 text-sm sm:text-base md:text-lg hover:cursor-pointer hover:text-teal-400">Kids</li>
               </Link>
               <Link to='/products/4'>
-              <li className="mb-2 text-xs sm:text-sm md:text-base hover:cursor-pointer hover:text-teal-400">Accessories</li>
+              <li className="mb-2 text-sm sm:text-base md:text-lg hover:cursor-pointer hover:text-teal-400">Accessories</li>
               </Link>
             </ul>
           </div>
@@ -61,10 +61,10 @@ const Footer = () => {
           <div className="item2 flex-1 p-4">
             <div className="section-heading font-bold mb-4">LINKS</div>
             <ul>
-              <li className="mb-2 text-xs sm:text-sm md:text-base">FAQ</li>
-              <li className="mb-2 text-xs sm:text-sm md:text-base">Help</li>
-              <li className="mb-2 text-xs sm:text-sm md:text-base">Stores</li>
-              <li className="mb-2 text-xs sm:text-sm md:text-base">Guidelines</li>
+              <li className="mb-2 text-sm sm:text-base md:text-lg">FAQ</li>
+              <li className="mb-2 text-sm sm:text-base md:text-lg">Help</li>
+              <li className="mb-2 text-sm sm:text-base md:text-lg">Stores</li>
+              <li className="mb-2 text-sm sm:text-base md:text-lg">Guidelines</li>
             </ul>
           </div>
 
@@ -94,7 +94,7 @@ const Footer = () => {
 
         {/* Footer Bottom Section */}
           <div className="left flex justify-center items-center gap-3 text-sm sm:text-lg md:text-xl bg-gray-900 py-6 text-stone-200">
-            <span className="logo text-base sm:text-lg md:text-xl font-semibold">WATCHY</span>
+            <span className="logo text-base sm:text-lg md:text-xl font-semibold">WRISTLY</span>
             <span className="copyright text-xs sm:text-base md:text-base font-normal">© Copyright 2024. All Rights Reserved</span>
           </div>
         </div>

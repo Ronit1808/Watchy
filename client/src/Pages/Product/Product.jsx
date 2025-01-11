@@ -8,15 +8,15 @@ import { Link } from 'react-router-dom';
 
 function Product() {
   const [selectImage, setSelectImage] = useState(0);
-  const [isOpen, setIsOpen] = useState(false); // state to track if the dropdown is open or closed
-  const [isWishlist, setIsWishlist] = useState(false); // Track if the item is in the wishlist
+  const [isOpen, setIsOpen] = useState(false); 
+  const [isWishlist, setIsWishlist] = useState(false); 
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen); // toggle the dropdown visibility
+    setIsOpen(!isOpen); 
   };
 
   const toggleWishlist = () => {
-    setIsWishlist(!isWishlist); // Toggle the wishlist state
+    setIsWishlist(!isWishlist); 
   };
 
   const reviews = [
@@ -53,7 +53,7 @@ function Product() {
   ];
 
   return (
-    <div className="product flex flex-col md:flex-row mb-2 h-max bg-white">
+    <div className="product flex flex-col md:flex-row mb-2 h-max mx-2 bg-white">
       <div className="left flex p-2 gap-4 h-fit  flex-col-reverse xl:flex-row flex-1">
         <div className="images basis-full lg:basis-1/5 flex gap-4 overflow-x-auto xl:flex-col">
           <img
@@ -84,10 +84,10 @@ function Product() {
           <h2 className="brand font-semibold text-lg md:text-2xl text-gray-900 mb-2">Rolex</h2>
           <h3 className="productname font-bold text-xl md:text-3xl text-gray-800 mb-4">Yacht-Master</h3>
           <div className="price flex items-center gap-4 mb-4">
-            <span className="discountprice text-xl md:text-2xl font-semibold text-gray-900">₹1,000</span>
-            <span className="actualprice line-through text-base md:text-lg text-gray-500">₹2,000</span>
+            <span className="discountprice text-xl md:text-2xl font-semibold text-gray-900">₹2,00,000</span>
+            <span className="actualprice line-through text-base md:text-lg text-gray-500">₹2,50,000</span>
             <span className="off bg-green-500 text-white font-semibold text-xs md:text-sm py-1 px-2 rounded-full">
-              50% off
+              20% off
             </span>
           </div>
         </div>

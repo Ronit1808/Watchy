@@ -12,12 +12,13 @@ import Products from './Pages/Products/Products.jsx'
 import Cart from './Pages/Cart/Cart.jsx';
 import Navbar from './Components/Navbar/Navbar.jsx'
 import Footer from './Components/Footer/Footer.jsx'
-
+import ScrollToTop from './Components/ScrollToTop.jsx';
 
 
 const Layout = () => {
   return (
-    <div className='app flex flex-col min-h-screen bg-white'>
+    <div className='app flex flex-col min-h-screen'>
+      <ScrollToTop/>
       <Navbar/>
       <Outlet/>
       <Footer/>

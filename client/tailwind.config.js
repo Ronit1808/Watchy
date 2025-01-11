@@ -6,7 +6,9 @@ export default {
   ],
   theme: {
     extend: {
-      
+      fontFamily: {
+        pacifico: ["Pacifico", "serif"], 
+      },
     },
   },
   plugins: [],

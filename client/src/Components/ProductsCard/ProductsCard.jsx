@@ -1,36 +1,47 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductsCard = ({ watch }) => {
   return (
     <Link to={`/product/${watch.id}`}>
-      <div className="card-container flex flex-col h-full border shadow-lg rounded-lg overflow-hidden group">
-        <div className="image-container w-full h-64 sm:aspect-[3/4] flex-shrink-0 overflow-hidden">
+      <div className="card-container flex flex-col h-full border shadow-lg rounded-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
+        {/* Image Section */}
+        <div className="image-container w-full h-64 sm:aspect-[3/4] flex-shrink-0 overflow-hidden bg-gray-100">
           <img
-            className="object-cover w-full h-full transform transition duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-95"
+            className="object-cover w-full h-full transform transition duration-300 ease-in-out group-hover:scale-105"
             src={watch.img}
             alt={watch.model}
           />
         </div>
 
         {/* Content Section */}
-        <div className="content-container flex flex-col justify-between px-2 py-2 sm:px-3 h-full">
-          <p className="type inline-block px-2 py-1 text-[8px] sm:text-xs bg-green-200 text-green-700 max-w-fit flex-shrink-0">
+        <div className="content-container flex flex-col justify-between p-4 h-full bg-white group-hover:bg-gray-50 transition-colors duration-300">
+          {/* Watch Type */}
+          <p className="type inline-block px-3 py-1 text-xs font-semibold bg-green-100 text-green-700 rounded-full max-w-fit">
             {watch.type}
           </p>
 
-          {/* Brand Name */}
-          <p className="brand font-semibold uppercase text-xs sm:text-base md:text-base">{watch.brand}</p>
-
-
-          {/* Product Name */}
-          <p className="productname text-[12px] sm:text-base md:text-base">{watch.model}</p>
+          {/* Brand and Model */}
+          <div className="mt-1">
+            <h3 className="brand text-base sm:text-lg font-bold text-gray-800 uppercase">
+              {watch.brand}
+            </h3>
+            <p className="productname text-xs sm:text-sm text-gray-600">
+              {watch.model}
+            </p>
+          </div>
 
           {/* Price Section */}
-          <div className="price mt-auto text-xs sm:text-sm md:text-base">
-            <span className="discountprice font-semibold text-xs sm:text-base">{watch.price}</span>
-            <span className="actualprice line-through pl-2 text-[10px] text-gray-600">{watch.discountPrice}</span>
-            <span className="off text-green-500 ml-1 text-[10px] sm:text-sm md:text-base">50% off</span>
+          <div className="price mt-2 text-sm sm:text-base">
+            <p className="discountprice font-semibold text-gray-800">
+              {watch.discountPrice}
+            </p>
+            <span className="actualprice line-through text-xs sm:text-sm text-gray-400">
+              {watch.price}
+            </span>
+            <span className="off text-green-500 text-xs sm:text-sm pl-4 mt-1">
+              {watch.off} off
+            </span>
           </div>
         </div>
       </div>

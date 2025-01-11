@@ -1,39 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import men from '../../Images/men.jpg';
+import women from '../../Images/women.jpg';
+import kids from '../../Images/kids.jpg';
+import accessories from '../../Images/accesories.jpg';
 
 const Categories = () => {
   return (
-    <div className="Categories px-4 py-8 bg-teal-100 rounded-lg shadow-lg">
+    <div className="Categories px-4 py-8 bg-gray-100 rounded-lg shadow-lg">
       <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-gray-800">Shop By Categories</h2>
-        <p className="text-gray-600 mt-2">Explore our exclusive categories curated for every style</p>
+        <h2 className="text-2xl md:text-3xl font-extrabold text-teal-500 font-pacifico">
+          Shop By Categories
+        </h2>
+        <p className="text-gray-600 font-serif mt-2">
+          Explore our exclusive categories curated for every style
+        </p>
       </div>
 
-      <div className="flex flex-wrap justify-evenly gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-6">
         {/* Men Category */}
-        <CategoryCard
-          link="/products/1"
-          title="Men"
-          imgSrc="https://images.pexels.com/photos/1578531/pexels-photo-1578531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        />
+        <CategoryCard link="/products/1" title="Men" imgSrc={men} />
         {/* Women Category */}
-        <CategoryCard
-          link="/products/2"
-          title="Women"
-          imgSrc="https://images.pexels.com/photos/6691699/pexels-photo-6691699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        />
+        <CategoryCard link="/products/2" title="Women" imgSrc={women} />
         {/* Kids Category */}
-        <CategoryCard
-          link="/products/3"
-          title="Kids"
-          imgSrc="https://images.pexels.com/photos/15227231/pexels-photo-15227231/free-photo-of-cute-boy-doing-thumb-s-up.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        />
+        <CategoryCard link="/products/3" title="Kids" imgSrc={kids} />
         {/* Accessories Category */}
-        <CategoryCard
-          link="/products/4"
-          title="Accessories"
-          imgSrc="https://images.pexels.com/photos/2779018/pexels-photo-2779018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        />
+        <CategoryCard link="/products/4" title="Accessories" imgSrc={accessories} />
       </div>
     </div>
   );
@@ -41,11 +33,11 @@ const Categories = () => {
 
 const CategoryCard = ({ link, title, imgSrc }) => {
   return (
-    <Link to={link} className="group w-full sm:w-64 md:w-80">
+    <Link to={link} className="group">
       <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 group-hover:scale-105">
         <div className="relative">
           <img
-            className="object-contain w-full h-52 sm:h-64"
+            className="object-cover w-full h-60 md:h-72 lg:h-96"
             src={imgSrc}
             alt={title}
           />

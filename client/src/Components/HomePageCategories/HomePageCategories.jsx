@@ -43,8 +43,8 @@ const settings = {
   slidesToShow: 6,
   slidesToScroll: 1,
   initialSlide: 0,
-  nextArrow: <CustomNextArrow />,  // Custom Next Arrow
-  prevArrow: <CustomPrevArrow />,  // Custom Prev Arrow
+  nextArrow: <CustomNextArrow />,  
+  prevArrow: <CustomPrevArrow />,  
   responsive: [
     {
       breakpoint: 1024,
@@ -76,44 +76,44 @@ const settings = {
 const data = [
   {
     id: 1,
-    brand: 'TITAN',
-    model: 'Titan Analog',
+    brand: 'TUDOR',
+    model: 'Black Bay 58',
     img: cardimg1,
-    price: '₹2,000',
-    discountPrice: '₹1,800',
+    price: '₹3,20,000',
+    discountPrice: '₹3,00,000',
     type: 'Affordable'
   },
   {
     id: 2,
     brand: 'ROLEX',
-    model: 'Rolex Submariner',
+    model: 'Submariner',
     img: cardimg2,
-    price: '₹200,000',
+    price: '₹2,00,000',
     discountPrice: '₹180,000',
     type: 'Luxury'
   },
   {
     id: 3,
-    brand: 'ANALOG',
-    model: 'Analog Watch',
+    brand: 'ROLEX',
+    model: 'Yacht-Master',
     img: cardimg3,
-    price: '₹500',
+    price: '₹5,00,000',
     discountPrice: '₹450',
     type: 'Classic'
   },
   {
     id: 4,
-    brand: 'DIGITAL',
-    model: 'Digital Watch',
+    brand: 'CITIZEN',
+    model: 'Eco-Drive',
     img: cardimg4,
-    price: '₹3,500',
-    discountPrice: '₹3,200',
+    price: '₹45,000',
+    discountPrice: '₹42,000',
     type: 'Dive'
   },
   {
     id: 5,
     brand: 'CASIO',
-    model: 'Casio G-Shock',
+    model: 'G-Shock',
     img: cardimg5,
     price: '₹17,000',
     discountPrice: '₹15,500',
@@ -122,7 +122,7 @@ const data = [
   {
     id: 6,
     brand: 'OMEGA',
-    model: 'Omega Seamaster',
+    model: 'Seamaster',
     img: cardimg6,
     price: '₹85,000',
     discountPrice: '₹80,000',
@@ -132,15 +132,19 @@ const data = [
 
 const HomePageCategories = ({ name }) => {
   return (
-    <div className="HomePageCategories px-4 my-3 py-6 bg-teal-100 shadow-lg rounded-lg">
+    <div className="HomePageCategories px-4 py-10 sm:py-16 bg-gray-100 shadow-lg rounded-lg">
       {/* Component Heading */}
-      <div className="component_heading mb-6 text-center">
-        <p className="text-2xl md:text-3xl font-extrabold text-gray-800 tracking-wide">
+      <div className="component_heading mb-6 flex items-center justify-center space-x-4">
+        {/* Left Line */}
+        <div className="w-1/5 border-t-2 border-teal-500"></div>
+
+        {/* Name */}
+        <p className="text-2xl md:text-3xl font-extrabold font-pacifico text-teal-500 tracking-wide">
           {name}
         </p>
-        <p className="text-sm md:text-base text-gray-600 mt-1">
-          Explore our curated selection of the finest watches
-        </p>
+
+        {/* Right Line */}
+        <div className="w-1/5 border-t-2 border-teal-500"></div>
       </div>
 
       {/* Slider */}

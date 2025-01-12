@@ -16,7 +16,7 @@ const Slider = () => {
         </div>
 
         {/* Right: Content */}
-        <div className="w-full lg:w-1/2 flex flex-col items-start lg:items-start md:pl-4 lg:pl-12">
+        <div className="w-full lg:w-1/2 pl-4 flex flex-col items-start lg:items-start md:pl-4 lg:pl-12">
           <h1 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold font-pacifico text-center text-gray-800 leading-tight">
             Welcome to <span className= "text-teal-400">Wristly</span>
           </h1>

@@ -9,14 +9,14 @@ function Cart() {
     {
       id: 1,
       name: 'Rolex Yacht-Master',
-      price: '2,00,000',
+      price: '200000',
       quantity: 1,
       image: image1,
     },
     {
       id: 2,
       name: 'Omega Seamaster',
-      price: '1,50,000',
+      price: '150000',
       quantity: 1,
       image: image2,
     },

@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="top flex flex-col lg:flex-row sm:px-8 md:px-14 px-6 py-6 gap-6 bg-gray-800 text-stone-200">
           
           {/* About Section */}
-          <div className="item2 flex flex-col flex-1 p-4">
+          <div className="item2 flex flex-col flex-1 p-2">
             <div className="section-heading font-bold mb-4">ABOUT</div>
             <p className="text-wrap text-sm sm:text-base md:text-base">
             Welcome to Wristly, where luxury, precision, and style meet. We are passionate about offering an exclusive selection of the finest watches from the world's most renowned brands. Whether you're a seasoned collector or a first-time buyer, we cater to all watch enthusiasts, offering everything from timeless classics to the latest trending pieces.
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
           
           {/* Categories Section */}
-          <div className="item2 flex-1 p-4">
+          <div className="item2 flex-1 p-2">
             <div className="section-heading font-bold mb-4">CATEGORIES</div>
             <ul>
               <Link to='/products/1'>
@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
           
           {/* Links Section */}
-          <div className="item2 flex-1 p-4">
+          <div className="item2 flex-1 p-2">
             <div className="section-heading font-bold mb-4">LINKS</div>
             <ul>
               <li className="mb-2 text-sm sm:text-base md:text-lg">FAQ</li>
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="item2 flex-1 p-4">
+          <div className="item2 flex-1 p-2">
             <div className="section-heading font-bold mb-2 sm:mb-4">CONTACT</div>
             <ul>
               <li className="mb-2 flex justify-start items-center gap-3 text-xs sm:text-sm ">

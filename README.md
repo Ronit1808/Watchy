@@ -52,8 +52,27 @@ To set up the project locally, follow these steps:
 
 
 ## Screenshots
+## Home Page
+![Home Page](client/src/Images/home.png)
+
+## Carousel
+![Carousel](client/src/Images/carousel.png)
+
+## Categories
+![Categories](client/src/Images/categories.png)
+
+## Single Product
+![Single Product Page](client/src/Images/singleproduct.png)
+
+## Products
+![Products Page](client/src/Images/products.png)
+
+## Cart
+![Cart Page](client/src/Images/cart.png)
 
 
+## Live Demo
+Check out the live project here: [Wristly](https://wristly.netlify.app)
 
 ## License
 
